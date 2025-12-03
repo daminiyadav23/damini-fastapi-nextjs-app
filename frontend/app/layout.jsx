@@ -1,10 +1,5 @@
 import "./globals.css";
-import AuthProvider from "../context/AuthContext";
-
-export const metadata = {
-  title: "My App",
-  description: "Description",
-};
+import { AuthProvider } from "./context/AuthContext";
 
 export default function RootLayout({ children }) {
   return (

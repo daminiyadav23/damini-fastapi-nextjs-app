@@ -17,9 +17,9 @@ export default function LoginForm() {
         password,
       });
       login(res.data.access_token);
-      setMsg("🎉 Successfully Logged In!");
+      setMsg(" Successfully Logged In!");
     } catch (err) {
-      setMsg("❌ Invalid email or password");
+      setMsg(" Invalid email or password");
     }
   };
 

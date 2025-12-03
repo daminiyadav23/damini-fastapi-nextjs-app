@@ -10,24 +10,22 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("token");
-    if (saved) setToken(saved);
+    if (saved) {
+      setToken(saved);
+      axios.defaults.headers.common["Authorization"] = `Bearer ${saved}`;
+    }
   }, []);
 
-  axios.interceptors.request.use((config) => {
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  });
-
-  const login = (jwt) => {
-    localStorage.setItem("token", jwt);
-    setToken(jwt);
+  const login = (newToken) => {
+    setToken(newToken);
+    localStorage.setItem("token", newToken);
+    axios.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
     setToken(null);
+    localStorage.removeItem("token");
+    delete axios.defaults.headers.common["Authorization"];
   };
 
   return (

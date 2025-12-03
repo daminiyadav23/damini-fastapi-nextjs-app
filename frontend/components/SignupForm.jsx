@@ -13,9 +13,9 @@ export default function SignupForm() {
         email,
         password,
       });
-      setMsg("🎉 Signup Successful!");
+      setMsg(" Signup Successful!");
     } catch (err) {
-      setMsg("❌ Email already exists");
+      setMsg(" Email already exists");
     }
   };
 

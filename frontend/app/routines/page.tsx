@@ -1,10 +1,10 @@
 "use client";
 import ProtectedRoute from "../../components/ProtectedRoute";
-export default function DashboardPage() {
+export default function RoutinesPage() {
   return (
     <ProtectedRoute>
-      <h1>Dashboard</h1>
-      {/* Your dashboard content */}
+      <h1>Routines</h1>
+      {/* routines content */}
     </ProtectedRoute>
   );
 }
